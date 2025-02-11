@@ -2,6 +2,8 @@
 
 
 let amigos =[];
+let varListaAmigos=0
+
 
 
 
@@ -22,13 +24,38 @@ function agregarAmigo(){
    amigos.push(prompt("Introduce un amigo")) ;
 console.log(amigos[amigos.length-1]);
 console.log(amigos.length);
-
+agregarALista();
 };
 
 
 
+//esta funcion agrega los amigos a un elemento lista.
+//se va a ejecutar desde dentro de la funcion agregar amigo
+/*function agregarALista(){
 
+    varListaAmigos= document.getElementById("listaAmigos");
 
+    amigos.forEach(nombreAmigo => {
+        const nuevoLi = document.createElement('li');
+        nuevoLi.textContent = nombreAmigo;
+        listaAmigos.appendChild(nuevoLi);  
+    }
+    )
+
+}*/
+
+function agregarALista(){
+    var listaAmigos = document.getElementById("listaAmigos");
+
+    // Limpia la lista antes de añadir nuevos elementos
+    listaAmigos.innerHTML = ''; // Elimina todos los elementos <li>
+
+    for (let i = 0; i < amigos.length; i++) {
+        const nuevoLi = document.createElement('li');
+        nuevoLi.textContent = amigos[i];
+        listaAmigos.appendChild(nuevoLi); 
+    }
+}
 
 
 
