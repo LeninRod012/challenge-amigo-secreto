@@ -20,8 +20,6 @@
     else{
             amigos.push(amigoNuevo.value); // Me permite agregar el *value* en ese input a el array amigos
             amigoNuevo.value= ""; // borra lo que hay en el input para poder escribir de nuevo.
-            console.log(amigos[amigos.length-1]);
-            console.log(amigos.length);
             agregarALista(); // ejecuta la funcion Agregar a la lista
             const resultadoFinal = document.getElementById("resultado");
             resultadoFinal.textContent= "";
@@ -54,12 +52,11 @@
     }
     else{
         amigoSecreto = Math.floor(Math.random()*amigos.length);
-        console.log(amigoSecreto);
         const resultadoFinal = document.getElementById("resultado");
         listaAmigos.innerHTML = '';
         resultadoFinal.textContent= `El amigo secreto es ${amigos[amigoSecreto]}`;
         amigos.length=0;
-        console.log(amigos.length);
+
 
     };
 
